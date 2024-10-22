@@ -36,7 +36,7 @@
 
         .login-container input[type="text"],
         .login-container input[type="password"] {
-            width: 100%;
+            width: 92%;
             padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
@@ -76,10 +76,11 @@
 <body>
 
 <div class="login-container">
-    <h2>Login ${name}</h2>
+    <h2>Login</h2>
+    <pre>${errorMessage}</pre>
     <form action="/login" method="POST">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" required>
+        <label for="name">Username</label>
+        <input type="text" id="name" name="name" required>
 
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required>
@@ -88,6 +89,11 @@
     </form>
     <div class="register-link">
         <p>Don't have an account? <a href="#">Register here</a></p>
+    </div>
+    <div class="register-link">
+        <pre>${name}</pre>
+        <pre>${password
+        }</pre>
     </div>
 </div>
 

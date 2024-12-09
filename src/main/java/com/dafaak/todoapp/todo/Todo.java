@@ -1,14 +1,22 @@
 package com.dafaak.todoapp.todo;
 
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 
-
+@Entity
 public class Todo {
 
+    @Id
+    @GeneratedValue
     private int id;
+
+    @Column(name = "username")
     private String username;
 
     @Size(min = 5, max = 255, message = "Enter at least 5 characters")
@@ -22,6 +30,10 @@ public class Todo {
         this.description = description;
         this.targetDate = targetDate;
         this.done = done;
+    }
+
+    public Todo() {
+
     }
 
     public int getId() {
